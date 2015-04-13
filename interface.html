@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+header {
+background-color:black;
+color:white;
+text-align:center;
+padding:2px;
+}
+
+footer{
+background-color:black;
+color:white;
+clear: both;
+text-align:center;
+padding:2px;
+}
+table, th, td{
+border:1px solid black;
+}
+
+
+</style>
+</head>
+
+    
+
+
+
+
+<body bgcolor = "#E6E6FA">
+<header>
+<h1> Variant search </h1>
+</header>
+
+
+<table align = "center";>
+<tr> 
+
+
+    <div class="related">
+      <h3>Results</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">show screen</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >convert to excel</a> </li>
+        <li class="right" >
+          <a href="content/installation.html" title="Installation"
+             accesskey="N"> convert to text</a> </li>
+        <li><a href="#">send email</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+
+<td width = "15%">
+<h3> Please upload vcf file: </h3>
+<input type = "file" name = "datafile" size = "40">
+<h3> Query Type </h3>
+<input type = "radio" name = "Individual" value = "Individual"> Individual Variant
+<input type = "radio" name = "Multiple" value = "Multiple"> Multiple variants
+</td>
+
+<td width = "25%" align = "center">
+<h3> Enter individual variant id </h3>
+<form action = /~vswilliamson/cgi-bin/formquery.pl METHOD = POST>
+<input type = "text" name = "Variant name" size  = 25 style = "width:250px; height:50px;"> 
+<div align = "center">Example formats: chr1:12345, c.76A>C, rs1245 </div>
+</td>
+
+<td width = "20%" align = "center">
+<h3>Datasets 1 </h3> 
+<form action = /~vswilliamson/cgi-bin/databases-1.pl METHOD = POST>
+<select multiple style = "width:250px; height:150px;">
+<option value = "ClinVar"> ClinVar </option>
+<option value = "Drug Response"> PharmGKB </option>
+<option value = "Exome sequencing project"> NHLBI Exome Sequencing Project</option>
+<option value = "Cosmic"> Catalogue of Somatic Mutations </option>
+<option value = "MyCancerGenome"> My Cancer Genome </option>
+<option value = "Clinvitae"> Clinvitae </option>
+<input type = "submit" value = "submit">
+</td>
+
+
+<td width = "20%" align = "center">
+<h3> Software </h3>
+<select multiple style = "width:250px; height:150px;>
+<option value = "Polyphen" > PolyPhen </option>
+<option value = "Mutation"> Mutation taster </option>
+<option value = "Sift"> SIFT </option>
+<input type = "submit" value = "submit">
+</td>
+
+<td width = "10%" align = "center">
+<h3> Population Genetics </h3>
+<select multiple>
+<option value = "1000Genomes"> 1000 Genomes phase 3 </option>
+<option value = "HapMap"> Hapmap phase 3 </option>
+<input type = "submit" value = "submit">
+</tr>
+
+<tr width = "15%" align = "center">
+<td>
+<h3> Determine Variant biological function </h3> 
+
+</td>
+<td width = "15%" align = "center">
+<h3> Enter multiple variant ids </h3> <br>
+<textarea  name = "Variants" cols = "10" rows = "5", style = "width:250px; height:150px;"> </textarea>
+<div align = "center" >Example formats: chr1:12345, c.76A>C, rs1245 </div> 
+</td>
+<td>
+<h3> Datasets 2</h3>
+<select multiple style = "width:250px; height:150px;">
+<option value = "Encode" > Encode V20 </option>
+<input type = "submit" value = "submit">
+</td>
+
+
+<td>
+<h3>Convert Variant location </h3>
+<input type = "text" name = "Variant name" size = 25>
+<div>
+<input type = "radio" name = "hg18.hg19" value = "hg18.hg19"> hg18.hg19
+<input type = "radio" name = "hg19.hg20" value = "hg19.hg20">hg19.hg20
+</div>
+<h3> Convert Variant Id </h3>
+<input type = "text" name = "Variant ID" size = 25>
+<div>
+<input type = "radio" name = "rsID.hgv" value = "rsID.hgv"> rsID.hgv
+<input type = "radio" name = "hgv.rsID" value = "hgv.rsID"> hgv.rsID
+</div> 
+</td>
+<td>
+<h3> Visualize Variant with IGV </h3>
+<input type = "submit" value = "submit"> 
+<div>
+<h3> Visualize variant within gene </h3> </div>
+<input type = "submit" value = "submit">
+</tr>
+</table>
+
+
+
+<footer background-color:black>
+<p>Molecular Diagnostics Laboratory, version: March 2015 </p>
+<p>Virginia Commonwealth University Health System </p> 
+</footer>
+
+
+
+
+</html>
