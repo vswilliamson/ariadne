@@ -58,6 +58,48 @@ sub dienice {
     print "$msg<p>\n";
     exit;
 }
+#!/usr/bin/perl -wT
+use CGI qw(:standard);
+use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use Fcntl qw(:flock :seek);
+use strict;
+
+print header;
+print start_html("Kite Catalog - Search Results");
+print qq(<h2>Search Results</h2>\n);
+
+my $keyword = param('keyword');
+print qq(<p>Results for search of `$keyword':</p>\n);
+
+open(INF,"data2.db") or &dienice("Can't open data.db: $! \n");
+flock(INF, LOCK_SH);    # shared lock
+seek(INF, 0, SEEK_SET); # rewind to beginning
+my @data = <INF>;                # read the entire file
+close(INF);
+
+my @results = grep(/$keyword/i, @data);
+my $num = @results;
+if ($num) {
+   print qq(<form action="order.cgi" method="POST"\n);
+   foreach my $i (@results) {
+       my ($stocknum,$name,$instock,$price,$category) = 
+split(/\|/,$i);
+       print qq(<input type="text" name="$stocknum" size=5> $name - \$$price<p>\n);
+   }
+   print qq(<input type="submit" value="Order!">\n);
+   print qq(<p>$num kites found.</p>\n);
+} else {
+   print qq(<p>No kites found.</p>\n);
+}
+
+print end_html;
+
+sub dienice {
+    my($msg) = @_;
+    print "<h2>Error</h2>\n";
+    print $msg;
+    exit;
+}
 
   
   # subroutine to run SNV through polyphen software
