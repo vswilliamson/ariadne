@@ -2,7 +2,7 @@
 # this script acts as an interface with the desk ico to either query known databases or
 #to run specific programs to determine individual SNP function
 # problems?
-#contact VS Williamson, PHd.
+#contact VS Williamson, Phd.
 #Vernell.Williamson@vcuhealth.org
 
 use strict;
@@ -16,6 +16,7 @@ my %form;
 foreach my $p (param()){
   $form{$p} = param($p);
 #insert results here:
+
   print "$p = $form{$p}<br>\n";
   
   }
