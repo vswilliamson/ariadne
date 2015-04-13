@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+header {
+background-color:black;
+color:white;
+text-align:center;
+padding:2px;
+}
+
+footer{
+background-color:black;
+color:white;
+clear: both;
+text-align:center;
+padding:2px;
+}
+table, th, td{
+border:1px solid black;
+}
+
+
+</style>
+</head>
+
+<body>
+<header>
+<h1> Variant search </h1>
+</header>
+
+<table>
+<tr> 
+<td width = "20%">
+<h3> Query Type </h3>
+<input type = "radio" name = "Individual" value = "Individual"> Individual Variant
+<input type = "radio" name = "Multiple" value = "Multiple"> Multiple variants
+</td>
+
+<td width = "20%">
+<h3> Enter individual variant id </h3>
+<form action = /~vswilliamson/cgi-bin/formquery.pl METHOD = POST>
+<input type = "text" name = "Variant name" size = 25> 
+<div>Example formats: chr1:12345, c.76A>C, rs1245 </div>
+</td>
+
+<td width = "30%">
+<h3>Datasets 1 </h3> 
+<form action = /~vswilliamson/cgi-bin/databases-1.pl METHOD = POST>
+<select multiple>
+<option value = "ClinVar"> ClinVar </option>
+<option value = "Drug Response"> PharmGKB </option>
+<option value = "Exome sequencing project"> NHLBI Exome Sequencing Project</option>
+<option value = "Cosmic"> Catalogue of Somatic Mutations </option>
+<option value = "MyCancerGenome"> My Cancer Genome </option>
+<option value = "Clinvitae"> Clinvitae </option>
+<input type = "submit" value = "submit">
+</td>
+<td>
+<h3> Software </h3>
+<select multiple>
+<option value = "Polyphen" > PolyPhen </option>
+<option value = "Mutation"> Mutation taster </option>
+<option value = "Sift"> SIFT </option>
+<input type = "submit" value = "submit">
+<td>
+<h3> Population Genetics </h3>
+<select multiple>
+<option value = "1000Genomes"> 1000 Genomes phase 3 </option>
+<option value = "HapMap"> Hapmap phase 3 </option>
+<input type = "submit" value = "submit">
+</tr>
+<tr>
+<td>
+<h3> Determine Variant biological function </h3> 
+
+</td>
+<td width = "15%">
+<h3> Enter multiple variant ids </h3> <br>
+<textarea  name = "Variants" cols = "10" rows = "5", size = 40>
+</textarea>
+<div>Example formats: chr1:12345, c.76A>C, rs1245 </div> 
+</td>
+<td>
+<h3> Datasets 2</h3>
+<select multiple>
+<option value = "Encode" > Encode V20 </option>
+</td>
+
+
+<td>
+<h3>Convert Variant location </h3>
+<input type = "text" name = "Variant name" size = 25>
+</td>
+<td> 
+
+</tr>
+</table>
+
+
+
+<footer background-color:black>
+<p>Molecular Diagnostics Laboratory, March 2015 </p>
+<p>Virginia Commonwealth University Health System </p> 
+</footer>
+
+
+
+
+</html>
