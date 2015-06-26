@@ -8,9 +8,8 @@ library(ggbio)
 library(data.table)
 library(plyr)
 options(warn = -1)
-setwd("C:/Users/vwillia2/Downloads")
-dir.create ("C:/Users/vwillia2/Downloads/annotation.output")
-#alleles = read.delim("alleles_IonXpress_003.xls")
+
+)
 
 #alleles = read.delim(x)
 variants = subset(alleles, alleles$Allele.Call != "No Call")
