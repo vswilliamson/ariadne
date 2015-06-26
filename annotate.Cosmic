@@ -8,8 +8,7 @@ library(ggbio)
 library(data.table)
 library(plyr)
 options(warn = -1)
-setwd("C:/Users/vwillia2/Downloads")
-dir.create ("C:/Users/vwillia2/Downloads/annotation.output")
+
 
 var.info = cbind(variants[,13], variants[,1:5], variants[,10:11])
 var.sub = cbind(variants[,1:2], (variants[,2]+1))
