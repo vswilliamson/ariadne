@@ -1,5 +1,5 @@
 # ariadne
-a collection of R functions to modify and annotate variants detected through NGS in a clinical setting
+A collection of R functions to modify and annotate variants detected through NGS in a clinical setting
 
 Datasets include:
 1) Cosmic
