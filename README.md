@@ -1,4 +1,4 @@
-# ariadne
+# tripod
 A collection of R functions to modify and annotate variants detected through NGS in a clinical setting
 
 Datasets include:
@@ -10,4 +10,5 @@ Datasets include:
 6) Protein measures from SIFT, POLYPHEN2, LRT, MUTATIONTASTER
 7) Conservation measures from PhyloP
 8) Current clinical trials through clinicaltrials.gov
+9) PharmaGKB (https://www.pharmgkb.org/)
 
